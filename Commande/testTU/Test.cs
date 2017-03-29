@@ -56,11 +56,11 @@ namespace GestionCommande.testTU
             LigneCommande ligneCmd = new LigneCommande() { Produit = c2.GetProduits().First(), Quantite = 2 };
             lignesCommande.Add(ligneCmd);
             c2.CreerCommande(client, lignesCommande);                      
-            Assert.AreEqual(c2.GetCommandes().Last().Client, client);      
-            Assert.AreEqual(c2.GetCommandes().Last().LignesCommande.Last().Quantite, 2);
+            Assert.AreEqual(c2.GetCommandes().Last().Client, client);
             Assert.AreEqual(c2.GetProduits().First().Id, 1);
+            Assert.AreEqual(c2.GetCommandes().Last().LignesCommande.Last().Quantite, 2);
             //J'ajoute une commande qui contient un le dernier client de la liste, le premier produit de la liste et une quantité à 2
-            //Je vérifie qu'il me retourne bien que le dernier client, commande bien le premier produit deux fois 
+            //Je vérifie qu'il me retourne bien que le dernier client de la liste commande bien 2 fois le premier produit de la liste
         }
      }
 }
